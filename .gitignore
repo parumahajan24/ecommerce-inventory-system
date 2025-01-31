@@ -1,0 +1,12 @@
+# Add these contents to .gitignore
+node_modules/
+.serverless/
+.env
+.DS_Store
+coverage/
+.vscode/
+*.log
+.webpack/
+dist/
+build/
+.idea/

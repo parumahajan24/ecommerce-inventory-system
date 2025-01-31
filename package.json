@@ -1,0 +1,24 @@
+{
+  "name": "ecommerce-inventory-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@middy/core": "^6.0.0",
+    "@middy/http-json-body-parser": "^6.0.0",
+    "aws-sdk": "^2.1692.0",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "serverless": "^4.5.3",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-offline": "^14.4.0"
+  }
+}
