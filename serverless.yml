@@ -1,0 +1,44 @@
+service: ecommerce-inventory-system
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  environment:
+    PRODUCTS_TABLE: ecommerce-products-${self:service}-${opt:stage, self:provider.stage}
+    INVENTORY_TABLE: ${self:service}-inventory-${opt:stage, self:provider.stage}
+    ORDERS_TABLE: ${self:service}-orders-${opt:stage, self:provider.stage}
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+package:
+  patterns:
+    - '!node_modules/.cache/**'
+    - '!tests/**'
+    - '!.git/**'
+
+functions:
+  createProduct:
+    handler: src/handlers/products/createProduct.handler
+    events: 
+      - http:
+          path: /products
+          method: post
+          cors: true
+
+resources:
+  Resources:
+    ProductsTable:
+      Type: AWS::DynamoDB::Table
+      Properties: 
+        TableName: !Sub "ecommerce-products-${AWS::StackName}"
+        AttributeDefinitions:
+          - AttributeName: productId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: productId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
