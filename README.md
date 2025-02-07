@@ -11,7 +11,7 @@ A serverless e-commerce inventory management system built with AWS and React.
 - **CloudWatch**: Monitoring and alerts
 - **S3**: Static assets and reports storage
 
-### Frontend (React)
+### Frontend (React / Might use Next.js)
 - **React**: UI library
 - **Redux**: State management
 - **Material-UI**: Component library
@@ -95,15 +95,3 @@ npm run deploy:prod
 npm run build
 npm run deploy
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit changes
-4. Push to the branch
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
