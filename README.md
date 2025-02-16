@@ -1,6 +1,6 @@
 # E-Commerce Inventory Management System
 
-A serverless e-commerce inventory management system built with AWS and React.
+Work in Progress - A serverless e-commerce inventory management system built with AWS and React.
 
 ## Architecture Overview
 
